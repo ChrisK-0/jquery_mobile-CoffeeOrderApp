@@ -1,0 +1,60 @@
+.milk_slider-value {
+    font-size: 50px;
+}
+
+#pay-finished {
+    background: url(https://cdn.pixabay.com/photo/2017/03/27/14/18/coffee-2179028_960_720.jpg) no-repeat center center fixed;
+}
+
+#pay-process {
+    background: url(https://cdn.pixabay.com/photo/2021/07/13/18/58/coffee-6464307_960_720.jpg) no-repeat center center fixed;
+}
+
+#milk-balance {
+    background: url(https://cdn.pixabay.com/photo/2013/08/25/09/13/drip-175551_960_720.jpg) no-repeat center center fixed;
+}
+
+#milk-foam {
+    background: url(https://cdn.pixabay.com/photo/2015/01/02/22/09/cappuccino-587039_960_720.jpg) no-repeat center center fixed;    
+}
+
+[data-role="page"] {
+    background: url(https://cdn.pixabay.com/photo/2020/07/29/08/33/coffee-5447420_960_720.jpg) no-repeat center center fixed;
+}
+
+#milk_foam_span-wrapper, #milk_balance_span-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#milk_balance_span-value, #milk_foam_span-value  {
+    font-size: 60px;
+    align-items: center;
+    margin-top: 12%;
+}
+
+#to_pay {
+    margin-top: 10%;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 30px;
+    padding-top: 50%;
+}
+
+.process_text_alignment {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 26px;
+}
+
+.process_background p {
+    text-shadow: 2px 2px 8px #000000;
+    padding: 10px;
+    align-items: center;
+}

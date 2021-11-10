@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Stop, coffee time</title>
+
+    <!-- main.css style -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- The jQuery Mobile CSS theme file (optional, if you are overriding the default theme) -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- The jQuery core JavaScript file -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- The jQuery Mobile core JavaScript file -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- My own creation -->
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Initial page loader -->
+    <div data-role="page" data-theme="b" id="loader">
+        <div role="main" class="ui-content">
+            <p>Loading...</p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+
+    <!-- login page -->
+    <div data-role="page" data-theme="b" id="login" data-theme="b">
+        <div data-role="header">
+            <h1>Login</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <!-- Username -->
+            <input data-theme="b" type="text" placeholder="Username">
+
+            <!-- Password -->
+            <input data-theme="b" type="text" placeholder="Password">
+
+            <a class="ui-btn-up-d" href="#coffee_type">Login</a>
+            or <a href="#register">register.</a>
+
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+
+    <!-- register page -->
+    <div data-role="page" data-theme="b" id="register">
+        <div data-role="header">
+            <h1>Register</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <!-- Username -->
+            <input data-theme="b" type="text" placeholder="Username">
+
+            <!-- Password -->
+            <input data-theme="b" type="text" placeholder="Password">
+
+            <a href="#coffee_type">Register</a>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a href="#login">Back to Login</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- coffee-type = coffee selection page -->
+    <div data-role="page" data-theme="b" id="coffee_type">
+        <div data-role="header">
+            <h1>Choose coffee</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <label for="coffee_type-classic" class="coffee_type">
+                <input data-theme="b" type="radio" name="coffee_type" id="coffee_type-classic" value="Classic"
+                    onclick="location.href='#coffee_size'" data-choiceType="Coffee">
+                Classic
+            </label>
+
+            <label for="coffee_type-custom" class="coffee_type">
+                <input data-theme="b" type="radio" name="coffee_type" id="coffee_type-custom" value="Custom"
+                    onclick="location.href='#coffee_size'" data-choiceType="Coffee">
+                Create
+            </label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a href="#login">Logout</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- Coffee SIZE -->
+    <div data-role="page" data-theme="b" id="coffee_size">
+        <div data-role="header">
+            <h1>Size</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content" class="ui-corner-all">
+            <input data-theme="b" type="radio" name="coffee-size" id="size-small" value="S" data-choiceType="Size">
+            <label for="size-small">Small</label>
+
+            <input data-theme="b" type="radio" name="coffee-size" id="size-medium" value="M" data-choiceType="Size">
+            <label for="size-medium">Medium</label>
+
+            <input data-theme="b" type="radio" name="coffee-size" id="size-large" value="L" data-choiceType="Size">
+            <label for="size-large">Large</label>
+
+            <input data-theme="b" type="radio" name="coffee-size" id="size-xlarge" value="XL" data-choiceType="Size">
+            <label for="size-xlarge">Extra large</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <!-- <h4><a href="#coffee_type" id="coffee_type-goto">Go back</a></h4> -->
+            <h4><a onclick="onclickGoBack()" id="coffee_type-goto" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- classic coffee type -->
+    <div data-role="page" data-theme="b" id="coffee-classic-type">
+        <div data-role="header">
+            <h1>Classic coffee types</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input data-theme="b" type="radio" name="coffee_classic-type" id="coffee_classic-latte" value="Caffe Latte"
+                data-choiceType="Classic" onclick="location.href='#milk-type'">
+            <label for="coffee_classic-latte">Caffe Latte</label>
+
+            <input data-theme="b" type="radio" name="coffee_classic-type" id="coffee_classic-cappu" value="Cappuchino"
+                data-choiceType="Classic" onclick="location.href='#milk-type'">
+            <label for="coffee_classic-cappu">Cappuchino</label>
+
+            <input data-theme="b" type="radio" name="coffee_classic-type" id="coffee_classic-mocca" value="Moccacino"
+                data-choiceType="Classic" onclick="location.href='#milk-type'">
+            <label for="coffee_classic-mocca">Moccacino</label>
+
+            <input data-theme="b" type="radio" name="coffee_classic-type" id="coffee_classic-frappu" value="Frappuccino"
+                data-choiceType="Classic" onclick="location.href='#milk-type'">
+            <label for="coffee_classic-frappu">Frappuccino</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <!-- <h4><a href="#coffee_size">Go back</a></h4> -->
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- custom espresso shots -->
+    <div data-role="page" data-theme="b" id="coffee-custom-shot">
+        <div data-role="header">
+            <h1>Choose espresso type</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input data-theme="b" type="radio" name="coffee_custom-shot" id="coffe_custom-oneshot" value="1 Shot"
+                data-choiceType="Espresso" onclick="location.href='#milk-type'">
+            <label for="coffe_custom-oneshot">1 Shot</label>
+
+            <input data-theme="b" type="radio" name="coffee_custom-shot" id="coffe_custom-twoshot" value="2 Shots"
+                data-choiceType="Espresso" onclick="location.href='#milk-type'">
+            <label for="coffe_custom-twoshot">2 Shots</label>
+
+            <input data-theme="b" type="radio" name="coffee_custom-shot" id="coffe_custom-threeshot" value="3 Shots"
+                data-choiceType="Espresso" onclick="location.href='#milk-type'">
+            <label for="coffe_custom-threeshot">3 Shots</label>
+
+            <input data-theme="b" type="radio" name="coffee_custom-shot" id="coffe_custom-frenchpress" value="French press"
+                data-choiceType="Espresso" onclick="location.href='#milk-type'">
+            <label for="coffe_custom-frenchpress">French press</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <!-- <h4><a href="#coffee_size">Go back</a></h4> -->
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- MILK type -->
+    <div data-role="page" data-theme="b" id="milk-type">
+        <div data-role="header">
+            <h1>Milk selection</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input data-theme="b" type="radio" name="milk_type" id="milk_type-cow" value="Cow" data-choiceType="Milk">
+            <label for="milk_type-cow">Cow</label>
+
+            <input data-theme="b" type="radio" name="milk_type" id="milk_type-soy" value="Soy" data-choiceType="Milk">
+            <label for="milk_type-soy">Soy</label>
+
+            <input data-theme="b" type="radio" name="milk_type" id="milk_type-coconut" value="Coconut" data-choiceType="Milk">
+            <label for="milk_type-coconut">Coconut</label>
+
+            <input data-theme="b" type="radio" name="milk_type" id="milk_type-cashew" value="Cashew" data-choiceType="Milk">
+            <label for="milk_type-cashew">Cashew</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <!-- my old cool function -->
+            <!-- <h4><a id="milk_type-back" onclick="milkGoBack()">Go back</a></h4> -->
+            <h4><a id="milk_type-back" onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- MILK BALANCE -->
+    <div data-role="page" data-theme="b" id="milk-balance">
+        <div data-role="header">
+            <h1>Milk balance</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="milk_balance_span-wrapper"><span id="milk_balance_span-value" class="milk_balance_slider">50%</span></div>
+
+            <div id="milk_balance_slider-wrapper">
+                <input data-theme="b" type="range" name="milk_balance_slider" id="milk_balance-slider" min="0" max="100" value="50"
+                    data-choiceType="Balance">
+            </div>
+
+            <button id="milk_balance" value="50" data-choiceType="Balance"
+                onclick="location.href='#milk-foam'">OK</button>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <!-- <h4><a href="#milk-type">Go back</a></h4> -->
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- MILK FOAM -->
+    <div data-role="page" data-theme="b" id="milk-foam">
+        <div data-role="header">
+            <h1>Milk foam</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <div id="milk_foam_span-wrapper"><span id="milk_foam_span-value" class="milk_foam_span">50%</span></div>
+
+            <div id="milk_foam_slider-wrapper">
+                <input data-theme="b" type="range" name="milk_foam_slider" id="milk_foam-slider" min="0" max="100" value="50"
+                    data-choiceType="Foam">
+            </div>
+
+            <button id="milk_foam" value="50" data-choiceType="Foam" onclick="location.href='#syrup'">OK</button>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- SYRUP -->
+    <div data-role="page" data-theme="b" id="syrup">
+        <div data-role="header">
+            <h1>Syrup</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input data-theme="b" type="radio" name="syrup" id="syrup-none" value="None" data-choiceType="Syrup"
+                onclick="location.href='#additives'">
+            <label for="syrup-none">None</label>
+
+            <input data-theme="b" type="radio" name="syrup" id="syrup-coconut" value="Coconut" data-choiceType="Syrup"
+                onclick="location.href='#additives'">
+            <label for="syrup-coconut">Coconut</label>
+
+            <input data-theme="b" type="radio" name="syrup" id="syrup-peppermint" value="Peppermint" data-choiceType="Syrup"
+                onclick="location.href='#additives'">
+            <label for="syrup-peppermint">Peppermint</label>
+
+            <input data-theme="b" type="radio" name="syrup" id="syrup-maple" value="Maple-spice" data-choiceType="Syrup"
+                onclick="location.href='#additives'">
+            <label for="syrup-maple">Maple-spice</label>
+
+            <input data-theme="b" type="radio" name="syrup" id="syrup-hazelnut" value="Hazelnut" data-choiceType="Syrup"
+                onclick="location.href='#additives'">
+            <label for="syrup-hazelnut">Hazelnut</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- MILK ADDITIVES = things to add extra -->
+    <div data-role="page" data-theme="b" id="additives">
+        <div data-role="header">
+            <h1>Additives</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input data-theme="b" type="radio" name="additives" id="additives-none" value="None" data-choiceType="Additives"
+                onclick="location.href='#final-order'">
+            <label for="additives-none">None</label>
+
+            <input data-theme="b" type="radio" name="additives" id="additives-condensed" value="Condensed milk"
+                data-choiceType="Additives" onclick="location.href='#final-order'">
+            <label for="additives-condensed">Condensed milk</label>
+
+            <input data-theme="b" type="radio" name="additives" id="additives-honey" value="Honey" data-choiceType="Additives"
+                onclick="location.href='#final-order'">
+            <label for="additives-honey">honey</label>
+
+            <input data-theme="b" type="radio" name="additives" id="additives-marsh" value="Marshmallow" data-choiceType="Additives"
+                onclick="location.href='#final-order'">
+            <label for="additives-marsh">Marshmallow</label>
+
+            <input data-theme="b" type="radio" name="additives" id="additives-cream" value="Whipped cream" data-choiceType="Additives"
+                onclick="location.href='#final-order'">
+            <label for="additives-cream">Whipped cream</label>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <!-- FINAL ORDER -->
+    <!-- If user chose Classic coffee, bring here via JS -->
+    <!-- If user chose Custom coffee, redirect to MILK BALANCE -->
+    <div data-role="page" data-theme="b" id="final-order">
+        <div data-role="header">
+            <h1>Order</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="final_order-wrapper">
+                <ul data-role="listview" id="final_order"></ul>
+            </div>
+
+            <!-- onclick="location.href='#pay-process'" -->
+            <button id="to_pay">PAY</button>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4><a id="final-order-back" onclick="onclickGoBack()" href="">Go back</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+    <div data-role="page" data-theme="b" id="pay-process">
+        <div data-role="header">
+            <h1>Order</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="paying-process" class="process_text_alignment process_background">
+                <P>Processing payment...</P>
+            </div>
+        </div><!-- /content -->
+
+    </div><!-- /page -->
+
+
+    <div data-role="page" data-theme="b" id="pay-finished">
+        <div data-role="header">
+            <h1>Order</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="paying-finished" class="process_background process_text_alignment">
+                <p>Your coffee will be ready soon.</p>
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed" data-theme="b"> 
+            <h4>
+                <a onclick="location.href='#login'" href="">Log out</a><br>
+                <a href="https://pixabay.com/">All images taken from Pixabay</a>
+            </h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+</body>
+
+</html>
